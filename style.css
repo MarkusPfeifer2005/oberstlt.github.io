@@ -1,0 +1,255 @@
+
+
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: whitesmoke;
+}
+
+p {
+	font-size: 1.0em;
+	font-family: helvetica;
+}
+
+h1 { font-size:2.5em;
+	color:black;
+	text-align:left;
+	font-family: helvetica;
+	border-bottom:1px solid black;
+	margin: 50px 700px 0 50px;
+	}
+
+h2 {
+	font-size: 2.0em;
+	color: dodgerblue;
+	text-align: left;
+	font-family: helvetica;
+}
+
+.download_button {
+	background-color: #24252a;
+	border: solid #24252a;
+	color: #9de0ad;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	font-family: helvetica;
+}
+	.download_button:hover {
+		background-color: #9de0ad;
+		color: #24252a;
+	}
+
+.logo {
+	cursor: pointer;
+	background-color: #24252a;
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	background-color: #24252a;
+	font-family: helvetica;
+}
+.nav-links {
+	display: flex;
+	justify-content: space-around;
+	width: 30%;
+	background-color: #24252a;
+}
+.nav-links li {
+	list-style: none;
+	background: #24252a;
+	margin: 0 5px;
+}
+.nav-links a {
+	color: #9de0ad;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 14px;
+	background: #24252a;
+	text-decoration: none;
+	padding: 15px 15px;
+}
+.nav-links a:hover {
+	color: #24252a;
+	background-color: #9de0ad;
+}
+
+.burger {
+	background-color: #24252a;
+	display: none;
+	cursor: pointer;
+}
+.burger div {
+	width: 25px;
+	height: 4px;
+	background-color: #9de0ad;
+	margin: 5px;
+}
+
+@media screen  and (max-width:768px){
+	body {
+		overflow-x: hidden;
+	}
+	.nav-links {
+		position: absolute;
+		right: 0px;
+		height: 92vh;
+		top: 8vh;
+		background-color: #24252a;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+		transform: translateX(100%);
+		transition: transform 0.5s ease-in;
+	}
+	.nav-links li {
+		opacity: 0;
+	}
+	.burger {
+		display: block;
+	}
+}
+
+.nav-active {
+	transform: translateX(0%)
+}
+
+.gallery {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 3%;
+	border-radius: 25px;
+	background: #24252a;
+}
+	.gallery_item {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		position: relative;
+		width: 40%;
+		height: auto;
+		background: #24252a;
+		margin: 2%;
+	}
+		.gimg {
+			height: auto;
+			width: 50%;
+			background-color: #24252a;
+		}
+		.overlay {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: #9de0ad;
+			overflow: hidden;
+			width: 0;
+			height: 100%;
+			transition: 0.4s ease;
+		}
+			.ptext {
+				white-space: nowrap; 
+				color: #24252a;
+				background-color: #9de0ad;
+				font-size: 150%;
+				position: absolute;
+				overflow: hidden;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%);
+				font-family: helvetica;
+			}
+	.gallery_item:hover .overlay {
+		width: 100%;
+	}
+	.gallery_text {
+		font-family: helvetica;
+		background-color: #24252a;
+		color: whitesmoke;
+		margin: 15px;
+	}
+
+.li1 {
+	list-style-type: square;
+}
+
+
+
+
+
+.card_grid {
+	display: grid;
+	grid-template-columns: repeat(5, 20%);
+	grid-template-rows: repeat(6, 100px);
+	background-color: #24252a;
+}
+.card_edge {
+	grid-column-start: 2;
+	grid-row-start: 3;
+	width: 500px;
+	height: 300px;
+	z-index: 999; /* Z-Axis */
+	background: linear-gradient(100deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3)) border-box;
+	border: 2px solid transparent;
+	border-radius: 25px;
+	-webkit-mask:
+		linear-gradient(#fff 0 0) padding-box,
+		linear-gradient(#fff 0 0);
+	-webkit-mask-composite: destination-out;
+	mask-composite: exclude;
+	box-shadow: 10px 10px #ff0000;
+}
+.card_interior {
+	grid-column-start: 2;
+	grid-row-start: 3;
+	backdrop-filter: blur(20px);
+	width: 500px;
+	height: 300px;
+	z-index: 998; /* Z-Axis */
+	background: linear-gradient(100deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)) border-box;
+	border-radius: 25px;
+}
+	.grid_circle1 {
+			grid-column-start: 1;
+			grid-row-start: 3;
+			background: linear-gradient(0deg, blueviolet, mediumvioletred);
+			border-radius: 50%;
+			width: 100px;
+			height: 100%;
+		}
+	.grid_circle2 {
+		grid-column-start: 3;
+		grid-row-start: 5;
+		background: blueviolet;
+		border-radius: 50%;
+		width: 150px;
+		height: 150%;
+	}
+	.grid_circle3 {
+		grid-column-start: 4;
+		grid-row-start: 2;
+		background: mediumvioletred;
+		border-radius: 50%;
+		width: 125px;
+		height: 125%;
+	}
+
+
+
+.footer_listitem {
+    background-color: black;
+    color: whitesmoke;
+}
